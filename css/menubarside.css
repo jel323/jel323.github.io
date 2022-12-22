@@ -1,0 +1,29 @@
+/* menu bar */
+.menubarside {
+  height: 100%; /* full height */
+  width: 300px; /* width */
+  position: fixed; /* fixed menubar, stays in place when scrolling */
+  z-index: 1; /* stay on top */
+  top: 0;
+  left: 50px;
+  background-color: black;
+  overflow-x: hidden; /* disable horizontal scroll */
+  padding-top: 50px;
+}
+
+/* menu bar links */
+.menubarside a:link, a:visited, a:active {
+  padding: 20px 10px 10px 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  display: block;
+}
+
+/* mouse hover color change */
+.menubarside a:hover {
+  color: #a8a8a8;
+  text-decoration-line: underline;
+}
