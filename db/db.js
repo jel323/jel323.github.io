@@ -24,13 +24,13 @@ export default {
 			title: "Math-Phys",
 			skillName: "Mathematical Physics",
 			color: "2",
-			percentage: "75",
+			percentage: "80",
 		},
 		{
 			title: "Physics",
 			skillName: "Electricity and Magnetism",
 			color: "3",
-			percentage: "70",
+			percentage: "75",
 		},
 		{
 			title: "Physics",
@@ -48,6 +48,18 @@ export default {
 			title: "ML",
 			skillName: "Pytorch",
 			color: "8",
+			percentage: "60",
+		},
+		{
+			title: "Statistics",
+			skillName: "Bayesian Estimation",
+			color: "3",
+			percentage: "50",
+		},
+		{
+			title: "Statistics",
+			skillName: "Stochastic Systems",
+			color: "4",
 			percentage: "50",
 		},
 		{
@@ -57,10 +69,10 @@ export default {
 			percentage: "30",
 		},
 		{
-			title: "Physics",
-			skillName: "Laser Safety",
-			color: "10",
-			percentage: "50"
+			title: "Editor",
+			skillName: "VS Code",
+			color: "7",
+			percentage: "40",
 		},
 		{
 			title: "Sport",
@@ -69,10 +81,10 @@ export default {
 			percentage: "80",
 		},
 		{
-			title: "Editor",
-			skillName: "VS Code",
-			color: "7",
-			percentage: "40",
+			title: "Physics",
+			skillName: "Laser Safety",
+			color: "10",
+			percentage: "50"
 		},
 	],
 	research: {
