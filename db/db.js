@@ -42,6 +42,12 @@ export default {
 			title: "Languages",
 			skillName: "Python",
 			color: "5",
+			percentage: "65",
+		},
+		{
+			title: "ML",
+			skillName: "Pytorch",
+			color: "8",
 			percentage: "50",
 		},
 		{
@@ -57,12 +63,6 @@ export default {
 			percentage: "50"
 		},
 		{
-			title: "ML",
-			skillName: "Pytorch",
-			color: "8",
-			percentage: "30",
-		},
-		{
 			title: "Sport",
 			skillName: "Swimming",
 			color: "9",
@@ -72,7 +72,7 @@ export default {
 			title: "Editor",
 			skillName: "VS Code",
 			color: "7",
-			percentage: "20",
+			percentage: "40",
 		},
 	],
 	research: {
