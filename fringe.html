@@ -77,19 +77,26 @@
                               Return to Main Page</a>
                         </p>
                         <h1>Research</h1>
-                        <h2>Interferometry Fringe Tracing</h2>
+                        <h2>Interferometry Fringe Tracing using Image Segmentation</h2>
+                        <p>
+                           <a href="fringereport.html">See Full Fringe Tracing Project Report</a>
+                        </p>
                         <p>
                            I also worked on the fringe tracing
-                           algorithm used by the lab to partially process
-                           interferometry data. Interferometry data is created
-                           by many experiments on COBRA, typically used for
-                           plasma or gas density measurements. COBRA produces
+                           algorithm used by the Laboratory of Plasma Studies
+                           at Cornell (LPS) to partially process interferometry data.
+                           Interferometry data is created by many experiments
+                           at LPS. The data is typically used for
+                           resolving plasma densities. LPS produces
                            interferometry patterns through constructive and
-                           destructive interference of a laser. The algorithm
+                           destructive interference of a laser.
+                        </p>
+                        <p>
+                           The fringe tracing algorithm
                            tries to determine where the interferometry minimums
                            are through a few different methods. Below are two
                            images, the top image is an example of an
-                           inteferometry pattern which is output from COBRA,
+                           inteferometry pattern, which is raw data from LPS,
                            and the bottom image is the fringe trace of the
                            top interferometry pattern. The local minimums of
                            the interferometry pattern, specifically in the
@@ -102,45 +109,68 @@
                         <img src="media/05121_t2_int_fringe_cleaned_inv.png" height="500px" width="750px">
                         </p>
                         <p>
-                           The fringe trace algorithms handled interferometry
-                           patterns well, but not all.
-                           Their output still requires cleaning, which must be
-                           done by a person.
-                           All rule-based algorithms tried for fringe tracing
-                           required cleaning afterwards.
-                           All non-ML algorithms tried for fringe tracing
-                           required cleaning afterwards.
-                           Some ran faster, but required a lot of cleaning, and
-                           some ran slower, but required less cleaning.
-                           Therefore, I tried to apply machine learning to
-                           create a fringe tracing algorithm that is both very
-                           accurate and fast.
+                           I applied recent advances in the field of image segmentation
+                           to the fringe tracing task. Image segmentation
+                           is a field in Machine Learning, similar to image
+                           classification, but instead of classifying entire images,
+                           every pixel in an image is classified.
+                           The basis of my network architecture was UNet,
+                           which is a fully convolutional neural network (CNN)
+                           developed initally for biomedical image segmentation,
+                           and currently is one of the most popular image
+                           segmentation models.
                         </p>
                         <p>
-                           Specifically, I trained a convolutional neural
-                           network architecture, called UNet, to semantically
-                           segment the interferometry images.
-                           In training, I paired the interferometry images
-                           with their cleaned fringe traces as the given
-                           segmentation maps to make the training pairs.
-                           I used pytorch to train the model.
-                           Pytorch is a package in Python designed for machine
-                           learning.
-                           The model proved to be accurate at analyzing the
-                           simpler interferometry patterns, but was unable to
-                           analyze more complicated .
-                           The image pair below shows both the given
-                           segmentation map and the segmentation map generated
-                           from just the interferometry image through the
-                           trained model.
+                        </p>
+                        <h2>Results</h2>
+                        <p>
+                           The ML based fringe tracing algorithm performed
+                           decently in testing overall. It performed well on
+                           more simple fringe patterns that are already easy
+                           to trace. For complicated fringe patterns, it
+                           had adequate performance, but did demonstrate
+                           the ability to identify complicated fringe
+                           patterns and trace them better than previous
+                           methods.
                         </p>
                         <p>
-                           <img src="media/segmapcomp.png" height="250px" width="664px">
+                           Below contains three interferometry images and their
+                           corresponding fringe traces from the ML algorithm.
+                           All three of the below pairs are simple fringe traces.
                         </p>
                         <p>
-                           The trained model performed well when compared to the
-                           non-ML algorithm for simple fringe traces.
+                           <img src="media/05042_t1_int_26.png" height="281" width="375">
+                           <img src="media/05042_t1_int_26_seg.png" height="281" width="375">
                         </p>
+                        <p></p>
+                        <p>
+                           <img src="media/05044_t2_int_preshot_16.png" height="281" width="375">
+                           <img src="media/05044_t2_int_preshot_16_seg.png" height="281" width="375">
+                        </p>
+                        <p></p>
+                        <p>
+                           <img src="media/05044_t3_int_preshot_31.png" height="281" width="375">
+                           <img src="media/05044_t3_int_preshot_31_seg.png" height="281" width="375">
+                        </p>
+                        <p></p>
+                        <p>
+                           The next three image pairs contain complicated fringe patterns
+                        </p>
+                        <p>
+                           <img src="media/05042_t2_int_30.png" height="281" width="375">
+                           <img src="media/05042_t2_int_30_seg.png" height="281" width="375">
+                        </p>
+                        <p></p>
+                        <p>
+                           <img src="media/05044_t2_int_18.png" height="281" width="375">
+                           <img src="media/05044_t2_int_18_seg.png" height="281" width="375">
+                        </p>
+                        <p></p>
+                        <p>
+                           <img src="media/05044_t2_int_25.png" height="281" width="375">
+                           <img src="media/05044_t2_int_25_seg.png" height="281" width="375">
+                        </p>
+                        <p></p>
                         <h2>Acknowledgements</h2>
                         <p>
                            While working at LPS,
